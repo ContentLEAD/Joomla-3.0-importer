@@ -6,7 +6,7 @@ defined('_JEXEC') or die('Restricted access');
 // import Joomla controller library
 jimport('joomla.application.component.controller');
 
-class BraftonArticlesControllerCron extends JController
+class BraftonArticlesControllerCron extends JControllerLegacy
 {
 	function __construct( $config = array())
 	{

@@ -8,7 +8,7 @@ jimport('joomla.version');
 /**
  * General Controller of BraftonArticles component
  */
-class BraftonArticlesController extends JController
+class BraftonArticlesController extends JControllerLegacy
 {
 	function display($cachable = false, $urlparams = false) 
 	{

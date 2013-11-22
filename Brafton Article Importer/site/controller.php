@@ -8,6 +8,6 @@ jimport('joomla.application.component.controller');
 /**
  * 
  */
-class BraftonArticlesController extends JController
+class BraftonArticlesController extends JControllerLegacy
 {
 }

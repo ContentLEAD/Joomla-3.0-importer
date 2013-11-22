@@ -6,7 +6,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
  
 // Get an instance of the controller
-$controller = JController::getInstance('BraftonArticles');
+$controller = JControllerLegacy::getInstance('BraftonArticles');
  
 // Perform the Request task
 $controller->execute(JRequest::getCmd('task'));

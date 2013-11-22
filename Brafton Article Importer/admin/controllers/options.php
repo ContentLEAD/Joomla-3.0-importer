@@ -17,7 +17,7 @@ jimport('joomla.application.component.controlleradmin');
  * @subpackage  com_content
  * @since       1.6
  */
-class BraftonArticlesControllerOptions extends JControllerAdmin {
+class BraftonArticlesControllerOptions extends JControllerLegacyAdmin {
 
 	function apply() {
 		$model = $this->getModel('options');

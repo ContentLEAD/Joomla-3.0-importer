@@ -8,7 +8,7 @@ jimport('joomla.application.component.modelitem');
 /**
  * HelloWorld Model
  */
-class BraftonArticlesModelBraftonArticles extends JModelItem
+class BraftonArticlesModelBraftonArticles extends JModelLegacyItem
 {
 	/**
 	 * @var string msg

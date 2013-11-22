@@ -9,7 +9,7 @@ jimport('joomla.log.log');
 	Controller for developer tools - stuff to fix the guts if something goes wrong.
 	Don't put regular import routines in here.
 */
-class BraftonArticlesControllerDevTools extends JControllerAdmin
+class BraftonArticlesControllerDevTools extends JControllerLegacyAdmin
 {
 	private $_braftonOptions;
 	private $_feed;

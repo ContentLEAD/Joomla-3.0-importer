@@ -6,7 +6,7 @@ jimport('joomla.application.component.modellist');
 ini_set('max_execution_time', 300);
 include_once 'ApiClientLibrary/ApiHandler.php';
 
-class BraftonArticlesModelParent extends JModelList
+class BraftonArticlesModelParent extends JModelLegacyList
 {
 	protected $feed;
 	protected $options;
