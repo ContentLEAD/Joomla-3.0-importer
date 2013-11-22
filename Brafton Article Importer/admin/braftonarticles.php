@@ -5,7 +5,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
 jimport('joomla.version');
 
-$controller = JControllerLegacyLegacy::getInstance('BraftonArticles');
+$controller = JControllerLegacy::getInstance('BraftonArticles');
 
 $version = new JVersion();
 $joomlaVersion = $version->getShortVersion();
