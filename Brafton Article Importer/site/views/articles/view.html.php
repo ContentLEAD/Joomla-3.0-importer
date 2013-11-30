@@ -8,9 +8,9 @@ jimport('joomla.application.component.view');
 /**
  * HTML View class
  */
-class BraftonArticlesViewArticles extends JView
+class BraftonArticlesViewArticles extends JViewLegacy
 {
-	// Overwriting JView display method
+	// Overwriting JViewLegacy display method
 	function display($tpl = null) 
 	{
 		// Display the view

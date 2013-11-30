@@ -7,7 +7,7 @@ jimport('joomla.filesystem.file');
 
 include_once JPATH_CONFIGURATION . '/configuration.php';
 
-class BraftonArticlesViewLog extends JView
+class BraftonArticlesViewLog extends JViewLegacy
 {
 	protected $logContents;
 	

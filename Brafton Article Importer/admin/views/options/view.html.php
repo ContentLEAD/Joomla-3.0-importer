@@ -8,7 +8,7 @@ jimport('joomla.application.categories');
 /**
  * Options View
  */
-class BraftonArticlesViewOptions extends JView
+class BraftonArticlesViewOptions extends JViewLegacy
 {
 	protected $api_key;
 	protected $base_url;
