@@ -7,7 +7,7 @@ jimport('joomla.error.error');
 /**
  * BraftonArticlesOptions Model
  */
-class BraftonArticlesModelOptions extends JModelLegacyList
+class BraftonArticlesModelOptions extends JModelList
 {
 	protected $optionsTable;
 	protected $authorTable;

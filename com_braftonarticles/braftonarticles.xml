@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="3" method="upgrade">
-	<name>Brafton Articles</name>
+<extension type="component" version="3.0" method="upgrade">
+	<name>com_braftonarticles</name>
 	<creationDate>August 2012</creationDate>
 	<author>ContentLEAD</author>
 	<authorEmail>techsupport@contentlead.com</authorEmail>
 	<authorUrl>http://www.contentlead.com</authorUrl>
 	<copyright>Copyright 2012</copyright>
 	<license>GPL</license>
-	<version>0.9</version>
+	<version>1.0</version>
 	<description>Imports articles from Brafton/ContentLEAD/Castleford XML feeds</description>
 	<scriptfile>com_braftonarticles.script.php</scriptfile>
  
-	<install> <!-- Runs on install -->
+	<install>
 		<sql>
 			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
 		</sql>
 	</install>
-	<uninstall> <!-- Runs on uninstall -->
+	<uninstall>
 		<sql>
 			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
 		</sql>
 	</uninstall>
-	<update> <!-- Runs on update; New in 1.6 -->
-		<schemas>
-			<schemapath type="mysql">sql/updates/mysql</schemapath>
-		</schemas>
-	</update>
+
  
 	<files folder="site">
 		<filename>index.html</filename>
