@@ -33,13 +33,12 @@ class com_braftonarticlesInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 */
-	/*
 	public function postflight($type, $parent){ 
 		$installer = new JInstaller;
 		$src = $parent->getParent()->getPath('source');
 		$installer->install($src.'/plg_braftoncron');
 	}
-*/
+
 	/**
 	 * Called on uninstallation
 	 *
