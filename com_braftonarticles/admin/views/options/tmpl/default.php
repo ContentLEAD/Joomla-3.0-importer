@@ -4,7 +4,7 @@ defined('_JEXEC') or die('Restricted access');
 JHTML::_('behavior.tooltip');
 ?>
 
-<form action="index.php?option=com_braftonarticles" method="post" name="adminForm">
+<form action="index.php?option=com_braftonarticles" method="post" name="adminForm" id="adminForm">
 <div id="brafton-standard-opts">
 	<h2>Settings</h2>
 	<input type="hidden" name="task" value="" />
