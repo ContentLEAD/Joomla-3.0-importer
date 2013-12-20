@@ -7,7 +7,7 @@ JHTML::_('behavior.tooltip');
 <form action="index.php?option=com_braftonarticles" method="post" name="adminForm">
 <div id="brafton-standard-opts">
 	<h2>Settings</h2>
-	<input type="hidden" name="task" value="options.apply" />
+	<input type="hidden" name="task" value="" />
 	<div class="setting">
 		<h3>
 		<?php
