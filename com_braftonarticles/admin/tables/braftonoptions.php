@@ -11,6 +11,10 @@ jimport('joomla.database.table');
 class TableBraftonOptions extends JTable
 {
 	
+
+        var $option = null;
+
+        var $value = null;
 	/**
 	 * Constructor
 	 *

@@ -23,13 +23,15 @@ if (version_compare($joomlaVersion, '2.5', '<'))
 }
 else
 {
+
+	*/
 	$jinput = JFactory::getApplication()->input;
 	$view = strtolower($jinput->get('view', 'options'));
 	$task = $jinput->get('task');
-}
+
 JSubMenuHelper::addEntry('Settings', 'index.php?option=com_braftonarticles', $view == 'options');
 JSubMenuHelper::addEntry('Log', 'index.php?option=com_braftonarticles&view=log', $view == 'log');
-*/
+
 $controller = JControllerLegacy::getInstance('BraftonArticles');
 $controller->execute(JRequest::getCmd('task'));
  

@@ -18,6 +18,32 @@ class BraftonArticlesModelOptions extends JModelList
 		parent::__construct();
 	}
 	
+
+
+	function setdatabase($value,$option){
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+ 
+// Fields to update.
+$fieldsapi = array(
+    $db->quoteName('value').'=\''.$value.'\'',
+);
+ 
+// Conditions for which records should be updated.
+$conditionsapi = array(
+    $db->quoteName('option').'=\''.$option.'\'',
+
+);
+ 
+$query->update($db->quoteName('#__brafton_options'))->set($fieldsapi)->where($conditionsapi);
+$db->setQuery($query);
+$result = $db->query();
+
+
+	}
+
+
+
 	// This sets the options in the DB
 	// Called from the options sub-controller
 	function setOptions() {
@@ -34,63 +60,30 @@ class BraftonArticlesModelOptions extends JModelList
 			JError::raiseWarning(100, 'There was a problem registering your base URL.  Please double check and try again.');
 			return;
 		}
-		
-		// Scrub the key
-		$apiKey[0] = trim(stripslashes($apiKey[0]), '/');
-		
-		$APIKeyData['option'] = "api-key";
-		$APIKeyData['value'] = $apiKey[0];
-		if(!$this->optionsTable->save($APIKeyData)) {
-			JError::raiseError(500, $this->optionsTable->getError());
-			return;
-		}
-		
-		/* Push in the base url */
-		$baseURLData['option'] = "base-url";
-		$baseURLData['value'] = $baseURL[0];
-		if(!$this->optionsTable->save($baseURLData)) {
-			JError::raiseError(500, $this->optionsTable->getError());
-			return;
-		}
-		
-		$authorData['option'] = "author";
-		$authorData['value'] = $options['author'];
-		if(!$this->optionsTable->save($authorData)) {
-			JError::raiseError(500, $this->optionsTable->getError());
-			return;
-		}
-		
-		$importOrderData['option'] = 'import-order';
-		$importOrderData['value'] = $options['import-order'];
-		if(!$this->optionsTable->save($importOrderData)) {
-			JError::raiseError(500, $this->optionsTable->getError());
-			return;
-		}
-		
-		$publishedStateData['option'] = 'published-state';
-		$publishedStateData['value'] = $options['published-state'];
-		if(!$this->optionsTable->save($publishedStateData)) {
-			JError::raiseError(500, $this->optionsTable->getError());
-			return;
-		}
-		
-		$updateArticlesData['option'] = 'update-articles';
-		$updateArticlesData['value'] = $options['update-articles'];
-		if(!$this->optionsTable->save($updateArticlesData)) {
-			JError::raiseError(500, $this->optionsTable->getError());
-			return;
-		}
-		
-		$updateArticlesData['option'] = 'parent-category';
-		$updateArticlesData['value'] = $options['parent-category'];
-		if(!$this->optionsTable->save($updateArticlesData)) {
-			JError::raiseError(500, $this->optionsTable->getError());
-			return;
-		}
-		
-		JFactory::getApplication()->enqueueMessage('Your options have successfully been saved.  Please note that your articles will not import until you have activated the <a href="index.php?option=com_plugins">bundled cron plugin</a>.');
-	}
-	
+
+
+$this->setdatabase($options['api-key'],'api-key');
+$this->setdatabase($options['base-url'],'base-url');
+$this->setdatabase($options['author'],'author');
+$this->setdatabase($options['import-order'],'import-order');
+$this->setdatabase($options['published-state'],'published-state');
+$this->setdatabase($options['update-articles'],'update-articles');
+$this->setdatabase($options['parent-category'],'parent-category');
+
+ 
+// Fields to update.
+
+
+
+
+
+
+JFactory::getApplication()->enqueueMessage('Your options have successfully been saved.  Please note that your articles will not import until you have activated the <a href="index.php?option=com_plugins">bundled cron plugin</a>.');
+
+
+}
+
+
 	/* getAPIKey()
 	 * Pre - N/A
 	 * Post - returns API Key, string

@@ -9,7 +9,7 @@ jimport('joomla.log.log');
 	Controller for developer tools - stuff to fix the guts if something goes wrong.
 	Don't put regular import routines in here.
 */
-class BraftonArticlesControllerDevTools extends JControllerLegacyAdmin
+class BraftonArticlesControllerDevTools extends JControllerAdmin
 {
 	private $_braftonOptions;
 	private $_feed;
@@ -147,7 +147,7 @@ class BraftonArticlesControllerDevTools extends JControllerLegacyAdmin
 		$db = JFactory::getDbo();
 		
 		$installSql = JPATH_ADMINISTRATOR . '/components/com_braftonarticles/sql/install.mysql.utf8.sql';
-		$sql = JFile::read($installSql);
+		$sql = file_get_contents($installSql);
 		$msg = '';
 		$msgType = 'message';
 		$result = false;
