@@ -22,6 +22,8 @@ class BraftonArticlesControllerCron extends JControllerLegacy
 	
 	function loadCategories()
 	{
+
+		JLog::add('loaded categories started', JLog::INFO, 'com_braftonarticles');
 		$model = $this->getModel('categories');
 		if(!$model->getCategories()) {
 			return false;
@@ -32,6 +34,8 @@ class BraftonArticlesControllerCron extends JControllerLegacy
 	
 	function loadArticles()
 	{
+
+		JLog::add('loaded articles started', JLog::INFO, 'com_braftonarticles');
 		$model = $this->getModel('articles');
 		if(!$model->loadArticles()) {
 			return false;

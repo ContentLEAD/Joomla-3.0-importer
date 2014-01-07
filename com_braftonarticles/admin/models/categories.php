@@ -13,14 +13,19 @@ class BraftonArticlesModelCategories extends BraftonArticlesModelParent
 	public function getCategories()
 	{
 		$categoryList = $this->feed->getCategoryDefinitions();
+	
 		
+       
 		foreach ($categoryList as $category)
 		{
 			$categoryRow = JTable::getInstance('Category');
 			$brCategoryRow = JTable::getInstance('BraftonCategories', 'Table');
-			
+JLog::add('category names in getCategories function :'.trim($category->getName()), JLog::INFO, 'com_braftonarticles');
+
+			//check to see if category already exists
 			if (!$this->category_exists($category, $brCategoryRow))
 			{
+				//start checking for parent category
 				$this->options->load('parent-category');
 				$parentId = $this->options->value;
 				
@@ -32,6 +37,9 @@ class BraftonArticlesModelCategories extends BraftonArticlesModelParent
 					JLog::add(sprintf('Warning: No parent category match for id %d.', $parentId), JLog::WARNING, 'com_braftonarticles');
 					$parentId = 1;
 				}
+				//end checking for parent category 
+
+
 				
 				$categoryData = array(
 					'title' =>			trim($category->getName()),

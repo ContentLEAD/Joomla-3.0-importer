@@ -35,9 +35,11 @@ class NewsCategory {
             $c = new NewsCategory();
             $c->id = $n->getElementsByTagName("id")->item(0)->textContent;
             $c->name = $n->getElementsByTagName("name")->item(0)->textContent;
+            JLog::add('category name:'. $c->name, JLog::INFO, 'com_braftonarticles');
             $catList[]=$c;
         }
         return $catList;
+
     }
     
     public function getName(){

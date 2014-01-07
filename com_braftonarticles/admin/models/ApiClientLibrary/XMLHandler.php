@@ -15,6 +15,7 @@ class XMLHandler {
 	 * @return XMLHandler
 	 */
 	function __construct($url){
+	
 		$allowUrlFopenAvailable = ini_get('allow_url_fopen') == "1" || ini_get('allow_url_fopen') == "On";
 		$cUrlAvailable = function_exists('curl_version');
 		

@@ -147,7 +147,7 @@ class BraftonArticlesControllerDevTools extends JControllerAdmin
 		$db = JFactory::getDbo();
 		
 		$installSql = JPATH_ADMINISTRATOR . '/components/com_braftonarticles/sql/install.mysql.utf8.sql';
-		$sql = file_get_contents($installSql);
+		$sql = get_file_contents($installSql);
 		$msg = '';
 		$msgType = 'message';
 		$result = false;
