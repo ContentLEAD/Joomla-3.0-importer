@@ -46,7 +46,7 @@ class BraftonArticlesModelCategories extends BraftonArticlesModelParent
 				
 				$categoryRow = JTable::getInstance('Category');
 				
-				if (!$categoryRow->setLocation($parentId, 'last-child') || !$categoryRow->save($categoryData))
+				if (!$categoryRow->save($categoryData))
 				{
 					// if all our failsafes have failed then this category is no good.
 					// don't save; we'll get downstream notices for support/debug.
