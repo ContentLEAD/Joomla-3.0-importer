@@ -124,7 +124,7 @@ class plgSystemBraftonCron extends JPlugin
 					
 					case 'site_name':
 						$config = JFactory::getConfig();
-						$siteName = $config->getValue('config.sitename');
+						$siteName = $config->get('config.sitename');
 						$ogTags[$t] = $this->createOpenGraphTag($prefix . $tag, $siteName);
 						break;
 					
