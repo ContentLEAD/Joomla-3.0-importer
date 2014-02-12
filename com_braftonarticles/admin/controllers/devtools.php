@@ -139,7 +139,7 @@ class BraftonArticlesControllerDevTools extends JControllerAdmin
 		
 		return $content;
 	}
-	
+	/*
 	private function resetContentListing()
 	{
 		JLog::add('Resetting content listing tables.', JLog::DEBUG, 'com_braftonarticles');
@@ -187,6 +187,8 @@ class BraftonArticlesControllerDevTools extends JControllerAdmin
 			$this->setRedirect('index.php?option=com_braftonarticles', $msg, $msgType);
 		return $result;
 	}
+
+	*/
 	
 	function sync_categories()
 	{
